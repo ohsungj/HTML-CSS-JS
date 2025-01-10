@@ -1,0 +1,79 @@
+a 태그 : 링크
+href = "링크"
+hyperlink reference
+target = "_blank" 새 창에서 열기
+inline-block
+
+br 태그 : 줄바꿈
+
+---
+css에서 태그에 준 스타일은 해당 태그 모두에 적용된다.
+
+---
+젠코딩
+
+[] : 태그의 속성 href, target
+{} : 태그의 내용
+* : 태그의 개수
+
+---
+- 엘리먼트 간 관계
+부모 div
+자식 nav, section
+형제 nav, section
+
+- 선택자
+타입 선택자 : a { }
+자식 선택자 : a > b{ }
+형제 선택자 : a + b{ }
+  a요소 뒤 형제 요소 중   첫 b요소 선택
+후손 선택자 : a b{ }
+
+선택자가 길수록 스타일 우선순위를 가진다.
+
+
+<div><a ~~>네이버</a></div>
+a태그 div의 자식태그!
+'네이버' a태그의 데이터.(div의 데이터가 아니다)
+
+div{} => a태그에 속성을 주었다. 그런데 a태그에 숨겨진 속성이 있었다.
+
+그래서 컴퓨터는 아래와 같이 알아먹었다.
+div {
+  color : black;
+{
+a {
+  color : blue;
+}
+
+
+★HTML
+a[https://www.naver.com/][target="_blank"]{네이버}{입니다}
+<a href="https://www.naver.com/" target="_blank">네이버 </a>입니다.
+<br>
+<a href="https://www.kakaocorp.com/page/" target="_blank">카카오 </a>입니다.
+
+
+
+★CSS
+div{
+  font-weight:bold;//굵기
+  font-size:1500px;
+  font-style:italic;
+  letter-spacing:20px;//자간
+ color:rgba(128, 128, 128, 0.1)
+}
+
+div{
+  font-weight:900;
+  font-size:5rem;
+}
+section{
+  font-weight:bold;
+  /* 굵기 */
+  font-size:5rem;
+  letter-spacing:10px;
+ color:rgb(255, 192, 203);
+}
+
+
