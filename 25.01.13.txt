@@ -1,0 +1,114 @@
+<text-align> : 글자 배치
+블록이 가진 텍스트의 위치를 지정한다.
+기본값은 left.
+자식 블록 도형은 위치 변경시키지 못한다.
+
+---
+display : block
+  width, height O
+
+display : inline-block
+  글자크기에 맞춘 영역. width, height 적용O
+
+display : inline
+  글자크기에 맞춘 영역. width, height 적용X
+
+---
+<hover> 공중에 뜨다
+가상클래스
+
+:hover 마우스 올렸을 때 효과
+
+
+★HTML
+
+<div>
+    <a href="http://www.naver.com" target="_blank">네이버로 이동</a>
+</div>
+
+<section>
+    <a href="http://www.google.com" target="_blank">구글로 이동</a>
+    <a href="http://www.google.com" target="_blank">구글로 이동</a>
+    <article></article>
+</section>
+
+<nav>
+    <a href="http://www.daum.net" target="_blank">다음으로 이동</a>
+</nav>
+
+
+<div>
+  <a href="http://www.bnx.co.kr/16fw/main/main.asp" target="_blank">bnx 사이트</a>
+</div>
+
+<nav>
+  <a href="http://www.naver.com/" target="_blank">네이버</a>
+</nav>
+
+<section>
+  <a href="http://www.google.com/" target="_blank">구글</a>
+</section>
+
+
+★CSS
+
+div, section, nav {
+    border:10px dotted red;
+    margin:50px;
+}
+
+section {
+    text-align:center;
+}
+
+nav {
+    text-align:right;
+}
+
+a {
+    background-color:gold;
+}
+
+section article {
+    width:200px;
+    height:200px;
+    background-color:blue;
+}
+
+
+
+div {
+  text-align:right;
+}
+
+div a {
+  font-size:3rem;
+  color:black;
+}
+
+nav {
+  text-align:center;
+}
+
+nav a {
+  font-size:5rem;
+  color:red;
+}
+
+section a {
+  font-size:7rem;
+  color:blue;
+}
+
+
+
+div {
+  width:100px;
+  height:100px;
+  background-color:red;
+}
+
+/* 마우스 올림을 받은 div */
+div:hover {
+  background-color:blue;
+}
