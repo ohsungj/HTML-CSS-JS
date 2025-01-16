@@ -1,0 +1,150 @@
+inline : 	너비 최소, 높이 최소, 조정X
+inline-block : 너비 최소, 높이 최소, 조정O
+block : 	너비 최대, 높이 최소, 조정O
+
+- padding, margin
+1. inline : padding은 되나 부모 블록 벗어나는 일이 생김
+margin은 좌우는 되는데, 상하는 안된다.
+
+2. inline-block : padding, margin 되고, 부모 블록에 높이를 맞춘다. 다만, margin : auto는 먹지 않음.
+
+3. block : padding, margin 다 잘 된다.
+
+
+---
+inline은 웹페이지를 구성하는 큰 단위의 레이아웃에는 잘 사용하지 않음
+
+---
+<nth-child>
+자녀태그 중에서 지정선택
+first-child
+last-child
+nth-child(몇번)
+
+---
+- html태그 : 모든 태그의 부모
+- body태그 : 모든 보이는 태그의 부모
+
+<html>
+<head>
+정보. css. 폰트. 코드 관련 링크.
+</head>
+
+<body>
+이미지, 텍스트, 링크,
+</body>
+</html>
+
+---
+div 블록을 중앙정렬.
+한 줄에 하나만 존재.
+
+margin-left : auto;
+margin-right : auto;
+-auto : 공간을 균등하게 분배한다. margin에 사용. block에 사용.
+
+text-align : center;이거로는 안된다. 인라인 요소만 가능.
+태그가 가지고 있는 자식요소를 정렬.
+
+padding, margin : 자기 태그 기준으로 여백 조정.
+
+---
+클래스, 아이디
+1. html태그에 속성으로 줌
+2. css에서 선택자로 클래스 혹은 아이디를 택해서 스타일 지정가능.
+.클래스명{}
+#아이디명{}
+
+클래스 : 중복선택가능
+아이디 : 유일한 선택
+
+
+---
+border-radius : 경계선을 둥글게
+px 또는 % 단위
+
+
+
+★HTML
+
+
+
+
+
+
+
+★CSS
+
+div {
+  width:15%; /* 부모 엘리먼트 너비 기준 */
+  height:100px;
+  background-color:red;
+  display:inline-block;
+}
+
+div:first-child {
+  background-color:blue;
+}
+
+div:nth-child(2) {
+  background-color:gold;
+}
+
+div:last-child {
+  background-color:green;
+}
+
+div:nth-last-child(2) {
+  background-color:pink;
+}
+
+
+
+div {
+    width:100px;
+    height:100px;
+    margin-left:0; /* 이 코드는 사실 쓸 필요는 없다. 왜냐하면 원래 0 이니까 */
+    background-color:red;
+}
+
+div:nth-child(2) {
+    background-color:gold;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+div:nth-child(3) {
+    background-color:green;
+    margin-right:0;
+    margin-left:auto;
+}
+
+section {
+    border:5px dotted gray;
+}
+
+
+div {
+  width:15%; /* 부모 엘리먼트 너비 기준 */
+  height:100px;
+  background-color:red;
+  display:inline-block;
+  /* 모서리 50px를 둥글게 처리 */
+  border-radius:50px;
+  /* border-radius:50%; */
+}
+
+
+html {
+    border:10px solid red;
+}
+
+html > body {
+    border:10px solid blue;
+}
+
+html > body > div {
+    border:10px solid gold;
+    margin:10px;
+    height:100px;
+}
