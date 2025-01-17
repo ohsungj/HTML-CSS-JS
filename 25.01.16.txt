@@ -1,0 +1,67 @@
+- inherit : 상속
+텍스트에 대해서 웬만하면 상속
+
+color
+font-weight
+font-size
+letter-spacing
+
+---
+- 노말라이즈
+엘리먼트를 평범하게 만든다. = 기본 속성을 없앤다.
+=> 개발자 의도한 대로 순차적인 스타일링이 용이하다.
+
+a{
+  color : inherit;
+  text-decoration : none;
+}
+
+★HTML
+
+<div class="menu-box">
+  <div class="menu">
+    <div class="menu-item">
+      <div class="menu-item-text">메뉴아이템</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-text">메뉴아이템</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-text">메뉴아이템</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-text">메뉴아이템</div>
+    </div>
+  </div>
+</div>
+
+
+
+★CSS
+
+
+
+div.menu-box{
+  text-align:center;
+}
+
+div.menu{
+    background-color:#afafaf;
+  display:inline-block;
+   padding:0 20px; border-radius:10px
+}
+
+div.menu-item{
+  display:inline-block;
+}
+
+div.menu-item-text {
+  padding:20px;
+  display:block;
+}
+
+div.menu-item-text:hover{
+ background-color:black;
+ color:white;
+ cursor:pointer;
+}
