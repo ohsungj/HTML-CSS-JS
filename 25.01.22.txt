@@ -1,0 +1,269 @@
+★HTML
+<div class="side_bar">
+  <div class="status_icon">
+    <div>▶</div>
+    <div>▼</div>
+  </div>
+
+  <nav class="menu_box_1">
+    <ul>
+      <li>
+        <a href="#">1차 메뉴 아이템 1</a>
+        <ul>
+          <li><a href="#">2차 메뉴 아이템 1</a>
+            <ul>
+              <li><a href="#">3차 메뉴 아이템 1</a></li>
+              <li><a href="#">3차 메뉴 아이템 2</a></li>
+              <li><a href="#">3차 메뉴 아이템 3</a></li>
+              <li><a href="#">3차 메뉴 아이템 4</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">2차 메뉴 아이템 2</a>
+
+          </li>
+          <li><a href="#">2차 메뉴 아이템 3</a></li>
+          <li><a href="#">2차 메뉴 아이템 4</a>
+            <ul>
+              <li><a href="#">3차 메뉴 아이템 1</a></li>
+              <li><a href="#">3차 메뉴 아이템 2</a></li>
+              <li><a href="#">3차 메뉴 아이템 3</a></li>
+              <li><a href="#">3차 메뉴 아이템 4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">1차 메뉴 아이템 2</a></li>
+      <li><a href="#">1차 메뉴 아이템 3</a>
+        <ul>
+          <li><a href="#">2차 메뉴 아이템 1</a>
+            <ul>
+              <li><a href="#">3차 메뉴 아이템 1</a></li>
+              <li><a href="#">3차 메뉴 아이템 2</a></li>
+              <li><a href="#">3차 메뉴 아이템 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">2차 메뉴 아이템 2</a></li>
+          <li><a href="#">2차 메뉴 아이템 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">1차 메뉴 아이템 4</a>
+        <ul>
+          <li>
+            <a href="#">2차 메뉴 아이템 1</a>
+            <ul>
+              <li><a href="#">3차 메뉴 아이템 1</a></li>
+              <li><a href="#">3차 메뉴 아이템 2</a></li>
+              <li><a href="#">3차 메뉴 아이템 3</a></li>
+              <li><a href="#">3차 메뉴 아이템 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#">2차 메뉴 아이템 2</a></li>
+          <li><a href="#">2차 메뉴 아이템 3</a></li>
+          <li><a href="#">2차 메뉴 아이템 4</a>
+            <ul>
+              <li><a href="#">3차 메뉴 아이템 1</a></li>
+              <li><a href="#">3차 메뉴 아이템 2</a></li>
+              <li><a href="#">3차 메뉴 아이템 3</a></li>
+              <li><a href="#">3차 메뉴 아이템 4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+★CSS
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* 사이드바 */
+.side_bar {
+  background-color: #afafaf;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: -270px;
+  transition: left 0.3s, background-color 0.3s;
+}
+
+.side_bar:hover {
+  background-color: black;
+  color: white;
+  left: 0;
+}
+
+.side_bar > .status_icon > div {
+  text-align: right;
+  padding: 8px;
+}
+
+.side_bar > .status_icon > div:last-child {
+  display: none;
+}
+
+.side_bar:hover > .status_icon > div:last-child {
+  display: block;
+}
+
+.side_bar:hover > .status_icon > div:first-child {
+  display: none;
+}
+
+/* 사이드바 - 메뉴 */
+.side_bar > .menu_box_1 ul > li > a {
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.side_bar > .menu_box_1 ul > li:hover > a {
+  background-color: white;
+  color: black;
+}
+
+.side_bar > .menu_box_1 ul > li > a:not(:only-child)::after {
+  content: " [ + ]";
+}
+
+.side_bar > .menu_box_1 ul > li:hover > a:not(:only-child)::after {
+  content: " [ - ]";
+}
+
+.side_bar > .menu_box_1 > ul ul {
+  background-color: black;
+  color: white;
+  position: absolute;
+  display: none;
+  left: 100%;
+  top: 0;
+}
+
+.side_bar > .menu_box_1 ul > li {
+  position: relative;
+}
+
+.side_bar > .menu_box_1 ul > li:hover > ul {
+  display: block;
+}
+
+.side_bar > .menu_box_1 > ul ul > li > a {
+  white-space: nowrap;
+  width: 200px;
+}
+
+.con {
+  width: 800px;
+  border: 10px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+
+/* 노말라이즈 */
+body,ul,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+}
+
+/* 라이브러리 */
+.font-size-0 {
+  font-size: 0;
+}
+
+.font-size-0 > * {
+  font-size: 1rem;
+}
+
+.cell {
+  float:left;
+}
+
+.row::after {
+  content:"";
+  display: block;
+  clear: both;
+}
+
+/* 커스텀 */
+.menu-box-1 {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.menu-box-1 > ul {
+  background-color: #afafaf;
+  display: block;
+}
+
+.menu-box-1 > ul > li {
+  display: inline-block;
+  width: calc(100% / 7);
+}
+
+.menu-box-1 > ul > li > a {
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.menu-box-1 > ul > li:hover > a {
+  color:white;
+  background-color: black;
+}
+
+.box-1 {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-1 > img {
+  width: 100%;
+}
+
+BOX-SIZING
+div {
+    width:200px;
+    height:200px;
+    padding:20px;
+    border:20px solid green;
+    margin:20px;
+    background-color:red;
+    font-weight:bold;
+    color:white;
+    font-size:2rem;
+}
+
+div:last-child {
+    /* 아래 코드는 div의 너비를 200px로 고정시킨다. */
+    /* 아래코드가 작동하면 padding과 border로는 너비가 바뀌지 않는다 */
+    box-sizing:border-box;
+}
